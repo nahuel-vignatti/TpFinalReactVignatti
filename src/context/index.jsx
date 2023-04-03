@@ -4,20 +4,14 @@ export const Context = createContext();
 
 function CustomProvider({children}){
 
-    const [itemsAddedQuantity, setItemsAddedQuantity] = useState(0);
-
-    const onAdd = () => {
-        setItemsAddedQuantity((oldState) => oldState +1);
+    const [productsAdded, setProductsAdded] = useState([]);
+    
+    function onAdd(product,quantity){
+        setProductsAdded((prevState)=> prevState.concat(product))
     }
-
-    const onRemove = () => {
-        setItemsAddedQuantity((oldState) => oldState -1);
-    }
-
     const value = {
-        itemsAddedQuantity,
+        productsAdded,
         onAdd,
-        onRemove,
     }
 
     return <Context.Provider value={value}>{children}</Context.Provider>
