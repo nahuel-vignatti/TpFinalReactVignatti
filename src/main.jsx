@@ -2,6 +2,7 @@ import React, { createContext } from "react";
 import ReactDOM from "react-dom/client";
 import Root from "./routes/root";
 import ItemRoot from "./routes/itemRoot";
+import Cart from "./components/Cart";
 import "./index.css";
 import Layout from "./components/Layout";
 
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <div>Hello world!</div>,
+        element: <Cart />,
       },
       {
         path: "/checkout",
