@@ -7,7 +7,8 @@ function CartWidget(){
     const{productsAdded} = useContext(Context);
     return (<div className="widget">
         <img src={carrito} alt="" className="imgCarrito"/>
-        <p className="nroCarrito">{productsAdded.length}</p>
+        {/* el reduce en la siguiente linea es para calcular la cantidad de poductos en el carrito, incluso repetidos */}
+        <p className="nroCarrito">{productsAdded.reduce((acc,elem)=> acc + elem.quantity,0)}</p>
     </div>)
 }
 
