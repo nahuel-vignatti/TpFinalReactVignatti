@@ -1,20 +1,18 @@
 import ItemCount from "../ItemCount";
-import { Container,Button } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import "./itemdetail.css";
-import { useState,useContext } from "react";
+import { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { Context } from "../../context";
 
 function ItemDetail({ producto }) {
-  const {onAdd} = useContext(Context);
+  const { onAdd } = useContext(Context);
   const [added, setAdded] = useState(0);
 
-  function onAddProduct(cant){
+  function onAddProduct(cant) {
     setAdded(cant);
-    onAdd(producto,cant);
+    onAdd(producto, cant);
   }
-
-
 
   let textoDescriptivo;
   if (producto.category == "interior") {
@@ -43,15 +41,22 @@ function ItemDetail({ producto }) {
             <strong>Ubicacion: </strong>
             {textoDescriptivo}
           </p>
-          {added == 0 && <ItemCount stock={producto.stock} precio={producto.precio} onAdd={onAddProduct}/>}
-          <div className="ctas-container">
-            {added >=1 &&(
-              <NavLink to={"/cart"}>
-                <Button variant="primary">Terminar Compra</Button>{" "}
-              </NavLink>
+          {added == 0 && (
+            <ItemCount
+              stock={producto.stock}
+              precio={producto.precio}
+              onAdd={onAddProduct}
+            />
+          )}
+          <div>
+            {added >= 1 && (
+              <div className="ctas-container d-flex flex-row justify-content-center align-items-center">
+                <NavLink to={"/cart"}>
+                  <Button variant="primary">Terminar Compra</Button>{" "}
+                </NavLink>
+              </div>
             )}
-          </div>  
-          
+          </div>
         </div>
       </Container>
     </article>

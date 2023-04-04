@@ -7,3 +7,11 @@
     max-height: 8rem;
     width: auto;
 }
+
+.imgEliminar{
+    max-width: 40px;
+    height: auto;
+}
+.cajaItem{
+    width: 90%;
+}

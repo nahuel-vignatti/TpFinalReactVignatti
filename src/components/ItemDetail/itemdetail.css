@@ -17,3 +17,9 @@
     align-items: center;
 
 }
+
+.ctas-container{
+    width: 15rem;
+    height: 5rem;
+    background-color: rgba(248, 245, 241, 0.308);
+}

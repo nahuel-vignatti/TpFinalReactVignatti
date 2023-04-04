@@ -8,7 +8,7 @@ function ItemListContainer({ isCategoryRoute, categoryId }) {
 
   useEffect(() => {
     const productosPromise = new Promise((resolve, reject) =>
-      setTimeout(() => resolve(Products), 2000)
+      setTimeout(() => resolve(Products), 1000)
     );
     productosPromise
       .then((reponse) => {

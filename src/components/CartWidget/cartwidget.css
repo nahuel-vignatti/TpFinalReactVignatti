@@ -6,12 +6,17 @@
     width: 50px;
     height: auto;
 }
-.nroCarrito{
+.badgeCarrito{
     color: white;
-    background-color: grey;
-    border-radius: 50%;
-    font-size: 20px;
-    padding: 2px;
-     position: relative;
+    background-color: rgba(0, 0, 0, 0.356);
+    width: 20px;
+    height: 25px;
+    border-radius: 8px;
+    font-size: 15px;    
+    position: relative;
     transform: translate(-50%, -50%); 
+}
+.nroCarrito{
+    font-weight: bolder;
+    text-align: center;
 }
