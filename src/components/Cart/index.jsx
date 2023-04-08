@@ -4,7 +4,7 @@ import CartItem from "../CartItem";
 
 function Cart() {
   const { productsAdded } = useContext(Context);
-  let total = productsAdded.reduce((accum,elem)=> accum + (elem.quantity * elem.precio),0)
+  let total = productsAdded.reduce((accum,elem)=> accum + (elem.quantity * elem.price),0)
   if (productsAdded.length > 0) {
     return (
       <div className="d-flex flex-column align-content-center">

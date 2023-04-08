@@ -12,8 +12,8 @@ function CartItem({ producto }) {
         <div>
           <h5>{producto.name}</h5>
           <h6>Cantidad: {producto.quantity}</h6>
-          <h6>Precio Unitario: ${producto.precio}</h6>
-          <h6>Total: ${producto.precio * producto.quantity}</h6>
+          <h6>Precio Unitario: ${producto.price}</h6>
+          <h6>Total: ${producto.price * producto.quantity}</h6>
         </div>
         <img
           src={producto.img}

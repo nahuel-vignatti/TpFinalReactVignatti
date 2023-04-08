@@ -8,7 +8,7 @@ import { Context } from "../../context";
 function ItemDetail({ producto }) {
   const { onAdd } = useContext(Context);
   const [added, setAdded] = useState(0);
-
+  console.log(producto);
   function onAddProduct(cant) {
     setAdded(cant);
     onAdd(producto, cant);
@@ -36,7 +36,7 @@ function ItemDetail({ producto }) {
         </div>
         <div className="infoProdu">
           <h2>{producto.name}</h2>
-          <p>{producto.descripcion}</p>
+          <p>{producto.description}</p>
           <p>
             <strong>Ubicacion: </strong>
             {textoDescriptivo}
@@ -44,7 +44,7 @@ function ItemDetail({ producto }) {
           {added == 0 && (
             <ItemCount
               stock={producto.stock}
-              precio={producto.precio}
+              precio={producto.price}
               onAdd={onAddProduct}
             />
           )}

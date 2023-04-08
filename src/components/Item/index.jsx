@@ -9,7 +9,7 @@ function Item({ producto }) {
       <h5>{producto.name}</h5>
       <img src={producto.img} alt="" className="imgLista" />
       <div>
-        <h6 className="mb-3">Precio: ${producto.precio}</h6>
+        <h6 className="mb-3">Precio: ${producto.price}</h6>
         <NavLink to={`/item/${producto.id}`}>
           <Button variant="primary">Ver Detalle </Button>{" "}
         </NavLink>
