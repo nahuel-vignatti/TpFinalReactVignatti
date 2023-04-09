@@ -31,7 +31,7 @@ function CustomProvider({ children }) {
   }
 
   function removeItem(itemId) {
-    let bandera = confirm("desea borrar?");
+    let bandera = confirm("Esta seguro que desea borrar este Articulo?");
     if (bandera) {
       let arrayAux = productsAdded.filter((elem) => elem.id != itemId);
       setProductsAdded(arrayAux);
@@ -39,10 +39,7 @@ function CustomProvider({ children }) {
     }
   }
   function clear() {
-    let bandera = confirm("desea vaciar el carrito?");
-    if (bandera) {
-      setProductsAdded([]);
-    }
+      setProductsAdded([]);    
   }
 
   function isInCart(product) {

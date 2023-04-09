@@ -1,5 +1,4 @@
 import "./itemlistcontainer.css";
-// import Products from "../../mocks/products";
 import {
   collection,
   getDocs,
@@ -26,37 +25,33 @@ function ItemListContainer({ isCategoryRoute, categoryId }) {
       getDocs(queryResult)
         .then((snapshot) => {
           const docs = snapshot.docs;
-          setListaProdu(docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+          setListaProdu(docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+                              .sort((a,b)=>{
+                                if(a.name>b.name){
+                                  return 1;
+                                }else{
+                                  return -1;
+                                }
+                              }));
         })
         .catch((error) => console.log({ error }));
     } else {
       getDocs(itemsCollection)
         .then((snapshot) => {
           const docs = snapshot.docs;
-          setListaProdu(docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+          setListaProdu(docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+                              .sort((a,b)=>{
+                                if(a.name>b.name){
+                                  return 1;
+                                }else{
+                                  return -1;
+                                }
+                              }));
         })
         .catch((error) => console.log({ error }));
     }
+
   }, [categoryId]);
-
-  // useEffect(() => {
-  //   const productosPromise = new Promise((resolve, reject) =>
-  //     setTimeout(() => resolve(Products), 1000)
-  //   );
-  //   productosPromise
-  //     .then((reponse) => {
-  //       if (isCategoryRoute) {
-  //         const productsFiltered = reponse.filter(
-  //           (elem) => elem.category === categoryId
-  //         );
-
-  //         setListaProdu(productsFiltered);
-  //       } else {
-  //         setListaProdu(reponse);
-  //       }
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, [categoryId]);
 
   return (
     <main className="cont">

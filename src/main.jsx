@@ -2,9 +2,10 @@ import React, { createContext } from "react";
 import ReactDOM from "react-dom/client";
 import Root from "./routes/root";
 import ItemRoot from "./routes/itemRoot";
-import Cart from "./components/Cart";
+import Cart from "./routes/cart";
 import "./index.css";
 import Layout from "./components/Layout";
+import Checkout from "./routes/checkout";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CustomProvider from "./context";
@@ -49,7 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/checkout",
-        element: <div>Hello world!</div>,
+        element: <Checkout />,
       },
     ],
   },

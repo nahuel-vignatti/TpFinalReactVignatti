@@ -37,10 +37,7 @@ function ItemDetail({ producto }) {
         <div className="infoProdu">
           <h2>{producto.name}</h2>
           <p>{producto.description}</p>
-          <p>
-            <strong>Ubicacion: </strong>
-            {textoDescriptivo}
-          </p>
+          <p><strong>Ubicacion: </strong>{textoDescriptivo}</p>
           {added == 0 && (
             <ItemCount
               stock={producto.stock}
@@ -50,9 +47,12 @@ function ItemDetail({ producto }) {
           )}
           <div>
             {added >= 1 && (
-              <div className="ctas-container d-flex flex-row justify-content-center align-items-center">
+              <div className="ctas-container d-flex flex-column justify-content-center align-items-center gap-2">
                 <NavLink to={"/cart"}>
-                  <Button variant="primary">Terminar Compra</Button>{" "}
+                  <Button variant="success" className="btnCompras">Terminar Compra</Button>{" "}
+                </NavLink>
+                <NavLink to={"/"}>
+                  <Button variant="primary" className="btnCompras">Seguir Comprando</Button>{" "}
                 </NavLink>
               </div>
             )}

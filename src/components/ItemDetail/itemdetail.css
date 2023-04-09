@@ -19,7 +19,10 @@
 }
 
 .ctas-container{
-    width: 15rem;
-    height: 5rem;
+    width: 25rem;
+    height: 10rem;
     background-color: rgba(248, 245, 241, 0.308);
+}
+.btnCompras{
+    width:10rem;
 }

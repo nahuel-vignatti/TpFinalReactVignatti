@@ -3,14 +3,16 @@
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: end;
     justify-content: space-around;
     background-color: #f7f7f7;
+    padding-bottom: 1rem;
 }
 
 .lista > li > a {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
+    font-weight: bold;
     text-decoration: none;
     color: rgb(31, 129, 39);
 }
