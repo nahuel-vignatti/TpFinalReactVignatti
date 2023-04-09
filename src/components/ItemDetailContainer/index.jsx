@@ -1,5 +1,4 @@
 import "./itemdetailcontainer.css";
-import Products from "../../mocks/products";
 import { useId, useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
