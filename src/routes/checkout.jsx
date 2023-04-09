@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import "./checkout.css";
+import { NavLink } from "react-router-dom";
 import { Button,Form } from "react-bootstrap";
 import { Context } from "../context";
 import CartEmpty from "../components/CartEmpty";
@@ -23,10 +24,12 @@ function Checkout(){
 
         const collectionRef = collection(db,"orders");
         const total = productsAdded.reduce((accum,elem)=> accum + (elem.quantity * elem.price),0);
-
+        const fecha = new Date().toLocaleDateString();
+        
         const order = {
             buyer: {name: `${name}`,email:`${email}`,phone:`${phone}`},
             items: productsAdded,
+            fecha,
             total,
         };
 
@@ -61,8 +64,10 @@ function Checkout(){
 
                     <Form.Label className="textoLabel">Email</Form.Label>
                     <Form.Control id="formEmail" type="email" placeholder="Ingrese su email" required/>
-                    
-                    <Button variant="primary" className="mt-3" onClick={sendOrder}>Enviar Pedido </Button>{" "}
+                    <NavLink to={'/cart'}>
+                        <Button variant="success" className="mt-3 formButton" >Ver Pedido </Button>{" "}
+                    </NavLink>
+                    <Button variant="primary" className="formButton" onClick={sendOrder} >Enviar Pedido </Button>{" "}
                 </form>
             </section>
         );

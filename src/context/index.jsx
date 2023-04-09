@@ -34,8 +34,7 @@ function CustomProvider({ children }) {
     let bandera = confirm("Esta seguro que desea borrar este Articulo?");
     if (bandera) {
       let arrayAux = productsAdded.filter((elem) => elem.id != itemId);
-      setProductsAdded(arrayAux);
-      console.log(productsAdded);
+      setProductsAdded(arrayAux);      
     }
   }
   function clear() {

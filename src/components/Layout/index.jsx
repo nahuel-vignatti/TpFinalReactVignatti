@@ -7,7 +7,7 @@ function Layout (){
         <section className="layout">
             <NavBar />
             <Page />
-            {/* <Footer /> */}
+            <Footer />
         </section>
     )
 }

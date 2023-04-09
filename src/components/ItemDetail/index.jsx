@@ -8,7 +8,7 @@ import { Context } from "../../context";
 function ItemDetail({ producto }) {
   const { onAdd } = useContext(Context);
   const [added, setAdded] = useState(0);
-  console.log(producto);
+  
   function onAddProduct(cant) {
     setAdded(cant);
     onAdd(producto, cant);
