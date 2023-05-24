@@ -17,3 +17,5 @@ Se trabajo de manera modular, con el objetivo de poder reutilizar los componente
 ### CartEmpty
 
 Cree un componente CartEmpty para ser utilizado cuando se revisa el carrito y esta vacio, y este fue utilizado en diversas situaciones donde se puede acceder al carrito ya sea clickeando en el icono del carrito o escribiendo la direccion.
+
+https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Rotating_earth_%28large%29.gif/200px-Rotating_earth_%28large%29.gif
